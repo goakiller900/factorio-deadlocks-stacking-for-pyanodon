@@ -11,6 +11,9 @@ function create_all(stackable_items, stage_prefix, create_function)
         if item.tech then
           if data.raw.technology[item.tech] and type(data.raw.technology[item.tech].effects) == "table" then  --if the technology is found
             create_function(item.item, icon, item.tech, icon_size, item_type)
+          else
+            create_function(item.item, icon, stage_prefix .. "1", icon_size, item_type)   --if there is no technology, then add the item to the first stage
+          end
           end
         else
           create_function(item.item, icon, stage_prefix..item.stage, 32)
