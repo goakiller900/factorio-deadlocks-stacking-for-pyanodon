@@ -14,7 +14,6 @@ function create_all(stackable_items, stage_prefix, create_function)
           else
             create_function(item.item, icon, stage_prefix .. "1", icon_size, item_type)   --if there is no technology, then add the item to the first stage
           end
-          end
         else
           create_function(item.item, icon, stage_prefix..item.stage, 32)
         end
